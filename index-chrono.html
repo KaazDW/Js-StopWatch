@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mon premier timer JavaScript</title>
+  </head>
+
+  <body>
+    <p id="timer">00.00</p>
+    <input type="number" id="number">
+    <button onClick="Timer()">START</button>
+    <script>
+        const timerdiv = document.getElementById("timer");
+        var number = document.getElementById("number").value;
+        var departMinutes = 5;
+        var tempsseconds = departMinutes * 60;
+        function Timer(){
+        console.log(number);
+
+            setInterval(() => {
+                let minutes = parseInt(tempsseconds / 60, 10);
+                let secondes = parseInt(tempsseconds % 60, 10);
+
+                // if(minutes < 10) minutes = "0" + minutes;
+                // else minutes = minutes;
+                minutes = minutes < 10 ? "0" + minutes : minutes; 
+                secondes = secondes < 10 ? "0" + secondes : secondes;
+                    //chainage optionnel :
+                        //donne à la variable minutes -> si la condition "minutes < 10" est vérifié
+                        //la valeur "0" + minutes
+                        //sinon -> applique uniquement la valeur minutes
+
+                timerdiv.innerText = minutes + "." + secondes;
+                tempsseconds = tempsseconds <= 0 ? 0 : tempsseconds - 1;
+            }, 1000);
+        }
+    </script>
+  </body>
+</html>
