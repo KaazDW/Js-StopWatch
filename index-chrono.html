@@ -3,28 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <title>Mon premier timer JavaScript</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Inter+Tight:wght@100;200;300;400;500;600;700&family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+      *{
+        padding: 0;
+        margin: 0;
+        color: white;
+        font-family: 'Comfortaa', cursive;
+      }
+      body{
+        background-color: #333;
+        display :flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      div{
+        text-align: center;
+      }
+      div input{
+        margin-top: 15px;
+        color: black;
+      }
+      div button{
+        background-color: darkcyan;
+        padding: 10px 15px;
+        margin-top: 15px;
+        border: none;
+      }
+    </style>
   </head>
 
   <body>
-    <p id="timer">00.00</p>
-    <input type="number" id="number">
-    <button onClick="Timer()">START</button>
+    <div>
+      <p id="timer">00.00</p>
+      <!-- <input type="text" id="number"> -->
+      <input type="text" name="username" id="number" placeholder="time value (minutes)"/>
+      <button onClick="Timer()">START</button>
+      <button onClick="stopTImer()">||</button>
+      <p id="errormsg"></p>
+    </div>
+    
     <script>
-        const timerdiv = document.getElementById("timer");
-        var number = document.getElementById("number").value;
-        var departMinutes = 5;
-        var tempsseconds = departMinutes * 60;
-        function Timer(){
-        console.log(number);
+        const timerdiv = document.getElementById('timer');
+        const errortxt = document.getElementById('errormsg');
 
+
+        function Timer(){
+            var number = document.getElementById("number").value;
+            if (number < 0){
+              
+            }
+            departMinutes = number;
+            var tempsseconds = departMinutes * 60;
+            console.log(number.value);
+            errortxt.innerText="erreur";
             setInterval(() => {
                 let minutes = parseInt(tempsseconds / 60, 10);
                 let secondes = parseInt(tempsseconds % 60, 10);
 
                 // if(minutes < 10) minutes = "0" + minutes;
                 // else minutes = minutes;
-                minutes = minutes < 10 ? "0" + minutes : minutes; 
-                secondes = secondes < 10 ? "0" + secondes : secondes;
+                minutes = minutes <= 10 ? "0" + minutes : minutes; 
+                secondes = secondes <= 10 ? "0" + secondes : secondes;
                     //chainage optionnel :
                         //donne à la variable minutes -> si la condition "minutes < 10" est vérifié
                         //la valeur "0" + minutes
@@ -33,7 +74,7 @@
                 timerdiv.innerText = minutes + "." + secondes;
                 tempsseconds = tempsseconds <= 0 ? 0 : tempsseconds - 1;
             }, 1000);
-        }
+          }
     </script>
   </body>
 </html>
