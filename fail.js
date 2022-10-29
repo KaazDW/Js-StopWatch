@@ -1,59 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Mon premier timer JavaScript</title>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Inter+Tight:wght@100;200;300;400;500;600;700&family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
-      *{
-        padding: 0;
-        margin: 0;
-        color: white;
-        /* font-family: 'Comfortaa', cursive; */
-        font-family: 'Rubik';
-      }
-      body{
-        background-color: #333;
-        display :flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-      div{
-        text-align: center;
-        /* width: 50%; */
-        background-color: grey;
-      }
-      div input{
-        margin-top: 15px;
-        color: black;
-      }
-      div .button-div{
-
-      }
-      div button{
-        background-color: darkcyan;
-        padding: 10px 15px;
-        margin-top: 15px;
-        border: none;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div>
-      <p id="timer">00.00</p>
-      <!-- <input type="text" id="number"> -->
-      <input type="text" name="username" id="number" placeholder="time value (minutes)"/>
-      <div class="button-div">
-        <button onClick="Timer()">START</button>
-        <button onClick="">||</button>
-        <button onClick="">||</button>
-        <p id="errormsg"></p>
-      </div>
-    </div>
-    
-    <script>
         const timerdiv = document.getElementById('timer');
         const errortxt = document.getElementById('errormsg');
         let inter;
@@ -115,6 +59,3 @@
                 timerdiv.innerText = minutes + "." + secondes + " - " + nminutes + ":" + nsecondes;
             }, 1000);
           }
-    </script>
-  </body>
-</html>
