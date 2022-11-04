@@ -41,14 +41,36 @@
         padding: 10px 15px;
         margin-top: 15px;
         border: none;
+        font-size: 8px;
       }
       .test{
+        display: flex;
+        justify-content: center;
+        height: 50%;
+        width: 20%;
+        background-image: url(iphonepattern.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+      .test div{
+        margin-left: -8px;
       }
     </style>
   </head>
 
   <body>
-    <div class="test"></div>
+    <div class="test">
+      <div>
+        <h4>txt</h4>
+        <p id="timer">00.00</p>
+        <div class="button-div">
+          <button id="start-button" onClick="timerStart()">START</button>
+          <button onClick="timerPause()">||</button>
+          <button onClick="timerReset()">||</button>
+          <p id="errormsg"></p>
+        </div>
+      </div>
+    </div>
     <div>
       <!-- <p id="timer">00.00</p>
       <input type="text" name="username" id="number" placeholder="time value (minutes)"/>
