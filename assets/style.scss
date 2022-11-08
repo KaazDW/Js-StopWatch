@@ -6,7 +6,7 @@
   color: white;
   font-family: 'Poppins';
 }
-body{
+body{ //Css developed in Mobile-First
   background-color: #111;
   display :flex;
   justify-content: center;
@@ -54,3 +54,54 @@ body{
     
   }
 }
+
+@media screen and (min-width: 800px) {
+    body{
+        background-color: blue;
+
+        .container{
+        // background-color: rgba(255, 255, 0, 0.24);
+        // border: 1px solid white;
+        padding: 200px 150px;
+        border-radius: 550px;
+        text-align: center;
+        *{
+            font-size: 15px;
+        }
+        h4{
+            letter-spacing: 5px;
+        }
+        #timer-bis{
+            font-size: 15px;
+            margin-bottom: 45px;
+        }
+        p.madeby{
+            font-size: 15px;
+            margin-bottom: 35px;
+            color: grey;
+            a{
+                font-size: 15px;
+                color: white;
+                font-weight: 600;
+                text-decoration: none;
+            }
+        }
+        .button-div{
+            margin-top: 25px;;
+            button{
+                background-color: darkcyan;
+                padding: 12px 35px;
+                // border-radius: 5px;
+                border-radius: 55px;
+                margin: 5px;
+                border: none;
+                transition: 0.1s;
+            }
+        }
+        
+        }
+
+    }
+
+}
+
