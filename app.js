@@ -1,3 +1,4 @@
+// variable initialization
 const timerdiv = document.getElementById('timer');
 const timerpass = document.getElementById('timer-bis');
 const errortxt = document.getElementById('errormsg');
@@ -6,16 +7,21 @@ var sec = 00;
 var minutes = 00;
 var inter;
 
+
+//function definition
 function timerStart(){
     if(inter != undefined) clearInterval(inter);
     inter = setInterval(startFunction, 10);
+
+    //style interface param
     document.getElementById('start-button').style.backgroundColor = "rgb(0, 100, 100)";
     document.getElementById('pause-button').style.backgroundColor = "darkcyan";
     document.getElementById('reset-button').style.backgroundColor = "darkcyan";
-
 }
 function timerPause(){
     clearInterval(inter);
+
+    //style interface param
     document.getElementById('start-button').style.backgroundColor = "darkcyan";
     document.getElementById('pause-button').style.backgroundColor = "rgb(0, 100, 100)";
     document.getElementById('reset-button').style.backgroundColor = "darkcyan";
@@ -26,15 +32,15 @@ function timerReset(){
     sec = 0;
     minutes = 0;
     timerdiv.innerHTML = "00.00.00"
+
+    //style interface param
     document.getElementById('start-button').style.backgroundColor = "darkcyan";
     document.getElementById('pause-button').style.backgroundColor = "darkcyan";
     document.getElementById('reset-button').style.backgroundColor = "rgb(0, 100, 100)";
 }
+
 function startFunction(){
     msec++;
-    if(msec < 10) msec = "0" + msec; console.log(msec);
-    if(sec <= 9) sec = "0" + sec;
-
     if(msec > 100) {
         sec++;
         msec = 0;
@@ -43,7 +49,20 @@ function startFunction(){
         minutes++;
         sec = 0;
     }
+    display(msec, sec, minutes);
+}
 
+function display(msec, sec, minutes){
+    //convert int into string for display it with 2 char each
+    let string_msec = msec.toString();
+    let string_sec = sec.toString();
+    let string_minute = minutes.toString();
+    //so if one value have only one figure, add a 0 before
+    if (string_msec <= 9) string_msec = "0" + string_msec;
+    if (string_sec <= 9) string_sec = "0" + string_sec;
+    if (string_minute <= 9) string_minute = "0" + string_minute;
 
-    timerdiv.innerHTML= minutes + "." + sec + "." + msec;
+    //and then display it where you want
+    timerdiv.innerHTML = string_minute + "." + string_sec + "." + string_msec;
+
 }
