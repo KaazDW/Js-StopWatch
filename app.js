@@ -62,7 +62,7 @@ function display(msec, sec, minutes){
     if (string_sec <= 9) string_sec = "0" + string_sec;
     if (string_minute <= 9) string_minute = "0" + string_minute;
 
-    //and then display it where you want
+    //and then display it in the format you want
     timerdiv.innerHTML = string_minute + "." + string_sec + "." + string_msec;
 
 }
