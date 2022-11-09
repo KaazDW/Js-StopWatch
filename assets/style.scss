@@ -1,107 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700&family=Poppins:wght@100;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Ubuntu:wght@300;400;500;700&display=swap');
 *{
   padding: 0;
   margin: 0;
   color: white;
   font-family: 'Poppins';
 }
-body{ //Css developed in Mobile-First
-  background-color: #111;
-  display :flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  .container{
-    // background-color: rgba(255, 255, 0, 0.24);
-    // border: 1px solid white;
-    padding: 200px 150px;
-    border-radius: 550px;
-    text-align: center;
-    *{
-        font-size: 55px;
-    }
-    h4{
-        letter-spacing: 5px;
-    }
-    #timer-bis{
-        font-size: 35px;
-        margin-bottom: 45px;
-    }
-    p.madeby{
-        font-size: 35px;
-        margin-bottom: 35px;
-        color: grey;
-        a{
-            font-size: 35px;
-            color: darkcyan;
-            font-weight: 600;
-            text-decoration: none;
-        }
-    }
-    .button-div{
-        margin-top: 25px;;
-        button{
-            background-color: darkcyan;
-            padding: 12px 35px;
-            // border-radius: 5px;
-            border-radius: 55px;
-            margin: 5px;
-            border: none;
-            transition: 0.1s;
-        }
-    }
-    
-  }
+:root{
+    --yellow:  #ffeba7;
+    --yellow-bis: #ffeaa7c7;
 }
-
-@media screen and (min-width: 800px) {
-    body{
-        background-color: blue;
-
-        .container{
-        // background-color: rgba(255, 255, 0, 0.24);
-        // border: 1px solid white;
-        padding: 200px 150px;
-        border-radius: 550px;
+body{
+    height: 100vh;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .container{
         text-align: center;
-        *{
-            font-size: 15px;
-        }
         h4{
-            letter-spacing: 5px;
-        }
-        #timer-bis{
-            font-size: 15px;
-            margin-bottom: 45px;
-        }
-        p.madeby{
-            font-size: 15px;
-            margin-bottom: 35px;
-            color: grey;
+            -webkit-text-stroke: 2px var(--yellow);
+            color:rgba(255, 255, 142, 0);
+            font-size: 55px;
             a{
-                font-size: 15px;
-                color: white;
-                font-weight: 600;
+                -webkit-text-stroke: 2px var(--yellow);
+                color:rgba(255, 255, 142, 0);
+                font-size: 55px;
                 text-decoration: none;
             }
         }
+        #timer{
+            font-size: 35px;
+            color: white;
+        }
         .button-div{
-            margin-top: 25px;;
+            margin: 15px;
             button{
-                background-color: darkcyan;
-                padding: 12px 35px;
-                // border-radius: 5px;
-                border-radius: 55px;
-                margin: 5px;
+                font-size: 20px;
+                color: black;
+                background-color: var(--yellow);
+                padding: 8px 15px;
                 border: none;
-                transition: 0.1s;
+                margin: 0px 2px; 
             }
         }
-        
-        }
-
     }
-
 }
-

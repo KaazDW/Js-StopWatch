@@ -14,17 +14,17 @@ function timerStart(){
     inter = setInterval(startFunction, 10);
 
     //style interface param
-    document.getElementById('start-button').style.backgroundColor = "rgb(0, 100, 100)";
-    document.getElementById('pause-button').style.backgroundColor = "darkcyan";
-    document.getElementById('reset-button').style.backgroundColor = "darkcyan";
+    document.getElementById('start-button').style.backgroundColor = "var(--yellow-bis)";
+    document.getElementById('pause-button').style.backgroundColor = "var(--yellow)";
+    document.getElementById('reset-button').style.backgroundColor = "var(--yellow)";
 }
 function timerPause(){
     clearInterval(inter);
 
     //style interface param
-    document.getElementById('start-button').style.backgroundColor = "darkcyan";
-    document.getElementById('pause-button').style.backgroundColor = "rgb(0, 100, 100)";
-    document.getElementById('reset-button').style.backgroundColor = "darkcyan";
+    document.getElementById('start-button').style.backgroundColor = "var(--yellow)";
+    document.getElementById('pause-button').style.backgroundColor = "var(--yellow-bis)";
+    document.getElementById('reset-button').style.backgroundColor = "var(--yellow)";
 }
 function timerReset(){
     clearInterval(inter);
@@ -34,9 +34,9 @@ function timerReset(){
     timerdiv.innerHTML = "00.00.00"
 
     //style interface param
-    document.getElementById('start-button').style.backgroundColor = "darkcyan";
-    document.getElementById('pause-button').style.backgroundColor = "darkcyan";
-    document.getElementById('reset-button').style.backgroundColor = "rgb(0, 100, 100)";
+    document.getElementById('start-button').style.backgroundColor = "var(--yellow)";
+    document.getElementById('pause-button').style.backgroundColor = "var(--yellow)";
+    document.getElementById('reset-button').style.backgroundColor = "var(--yellow-bis)";
 }
 
 function startFunction(){
