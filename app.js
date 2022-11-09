@@ -12,6 +12,7 @@ var inter;
 function timerStart(){
     if(inter != undefined) clearInterval(inter);
     inter = setInterval(startFunction, 10);
+    errortxt.innerHTML = "running...";
 
     //style interface param
     document.getElementById('start-button').style.backgroundColor = "var(--yellow-bis)";
@@ -20,6 +21,7 @@ function timerStart(){
 }
 function timerPause(){
     clearInterval(inter);
+    errortxt.innerHTML = "pause";
 
     //style interface param
     document.getElementById('start-button').style.backgroundColor = "var(--yellow)";
@@ -32,6 +34,8 @@ function timerReset(){
     sec = 0;
     minutes = 0;
     timerdiv.innerHTML = "00.00.00"
+    errortxt.innerHTML = "reset";
+
 
     //style interface param
     document.getElementById('start-button').style.backgroundColor = "var(--yellow)";
